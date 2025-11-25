@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>TODO List</h2>
+
+<ul>
+    {% for todo in todos %}
+        <li>
+            <strong>{{ todo.title }}</strong>
+            <br>
+            Due: {{ todo.due_date }} <br>
+            Completed: {{ todo.is_completed }}
+        </li>
+        <br>
+    {% empty %}
+        <p>No TODOs yet!</p>
+    {% endfor %}
+</ul>
+
+{% endblock %}
